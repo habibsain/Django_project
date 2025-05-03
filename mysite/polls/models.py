@@ -1,10 +1,11 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Question(models.Model):
     question_text = models.TextField(max_length=100)
-    pub_date = models.DateField()
+    pub_date = models.DateField("Date published")
     
     def __str__(self):
         return self.question_text
