@@ -4,7 +4,11 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello World")
+    question_list = Question.objects.all()
+    return render(request, "polls/index.html", 
+                  {
+                      "question_list" : question_list
+                    })
 
 def detail(request, question_id):
     question = Question.objects.get(pk = question_id)
