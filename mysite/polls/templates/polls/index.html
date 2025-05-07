@@ -1,18 +1,15 @@
-{% extends "layout.html" %}
+{% extends "./base.html" %}
 
+
+{% block title %}My amazing blog{% endblock %}
 
 {% block content %}
 
-<ul>
+{% for q in question_list %}
 
-{% for question in question_list %}
-
-<li>
-    {{question.question_text}}
-</li>
+<a href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a>
+<p>{{ q.pub_date }}</p>
 
 {% endfor %}
 
 {% endblock %}
-
-</ul>

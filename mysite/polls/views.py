@@ -12,5 +12,8 @@ def index(request):
 
 def detail(request, question_id):
     question = Question.objects.get(pk = question_id)
-    quest_t = question.question_text
-    return HttpResponse(quest_t)
+    choices = question.choice_set.all()
+    return render(request, "polls/detail.html", 
+                  {
+                      "choice_list" : choices
+                    })

@@ -1,0 +1,19 @@
+{% extends "polls/base.html" %}
+
+
+{% block title %}DETAIL{% endblock %}
+
+{% block content %}
+<ul>
+
+    {% for c in choice_list %}
+
+    <li>{{ c.choice_text }}</li>
+    <p>{{ c.vote}}</p>
+
+{% endfor %}
+
+</ul>
+
+
+{% endblock %}
