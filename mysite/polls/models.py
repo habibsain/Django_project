@@ -10,6 +10,8 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    
+
 class choice(models.Model):
     choice_text = models.TextField(max_length=100)
     vote = models.IntegerField()

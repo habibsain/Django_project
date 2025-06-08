@@ -13,7 +13,7 @@ def index(request):
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk = question_id)
-    except Question.does_not_exist:
+    except Question.DoesNotExist:
         raise Http404("Question does not exist");
 
     choices = question.choice_set.all()
