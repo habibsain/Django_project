@@ -16,8 +16,21 @@ def detail(request, question_id):
     choices = question.choice_set.all()
     return render(request, "polls/detail.html", 
                   {
-                      "choice_list" : choices
+                      "choice_list" : choices,
+                      "question" : question
                     })
 
 def vote(request, question_id):
-    pass
+
+    try:
+        selected_choice = question.choice_set.get( pk=request.POST["choice"])
+
+    except(KeyError, Choice.DoesNotExist):
+        return render(request, "polls/detail.html", 
+                {
+                "question" : question,
+                "choice_list" : choices
+                },
+                )
+    else:
+        selected_choice.
