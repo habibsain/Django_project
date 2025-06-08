@@ -19,5 +19,5 @@ def detail(request, question_id):
                       "choice_list" : choices
                     })
 
-def vote(response):
+def vote(request, question_id):
     pass
