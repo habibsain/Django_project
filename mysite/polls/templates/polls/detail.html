@@ -4,24 +4,15 @@
 {% block title %}DETAIL{% endblock %}
 
 {% block content %}
-<ul>
 
-    {% for c in choice_list %}
-
-    <li>{{ c.choice_text }}</li>
-    <p>{{ c.vote}}</p>
-
-{% endfor %}
-
-</ul>
 <form action="{% url 'polls:vote' question.id %} method ="post">
 {% csrf_token %}
 
 <fieldset>
 	<h1>{{ question.question_text }}</h1>
 	{% for c in choice_list %}
-	<input type="radio" id="choice{{ forloop.counter }}" name="choice" value="{{c.id}}>
-	<label for="choice{{ forloop.counter }}">{{ c.choice_text }}"</label>
+		<input type="radio" id="choice{{ forloop.counter }}" name="choice" value="{{c.id}}>
+		<label for="choice{{ forloop.counter }}">{{ c.choice_text }}"</label>
 	{%end for%}
 </fieldset>
 
