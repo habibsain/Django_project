@@ -6,11 +6,14 @@
 	
 	<h1> "{{ question.question_text }}" </h1>
 	<ul>
-		<li> choices : 	votes
-	{% for choice in question.choice_set %}
-		<li> {{ choice.choice_text }} : {{ choice.vote }}
+		<li> choices : 	votes </li>
+	{% for choice in question.choice_set.all %}
+	<li> {{ choice.choice_text }} : {{ choice.vote }} </li>
 	{% endfor %}
 	</ul>
+	
+	
+	<a href = {% url 'polls:detail' question.id %} >Cast another vote</a>
 {% endblock %}
 
 
