@@ -11,7 +11,7 @@
 <fieldset>
 	<h1>{{ question.question_text }}</h1>
 	{% for c in choice_list %}
-		<input type="radio" id="choice{{ forloop.counter }}" name="choice" value="{{c.id}}>
+		<input type="radio" id="choice{{ forloop.counter }}" name="c" value="{{c.id}}>
 		<label for="choice{{ forloop.counter }}">{{ c.choice_text }}"</label>
 	{%endfor%}
 </fieldset>
