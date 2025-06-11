@@ -52,3 +52,14 @@ def result(request, question_id):
                   {
                       "question": question
                       })
+
+def add_question(request):
+    #need to add:
+    #url
+    #link with index
+    #form to post new question
+    #update the new question from result.POST to database
+    pass
+
+def add_choice(request, question_id):
+    pass
