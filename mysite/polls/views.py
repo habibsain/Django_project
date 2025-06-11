@@ -58,6 +58,7 @@ def add_question(request):
     #url
     #link with index
     #form to post new question
+    #choices for the question as well
     #update the new question from result.POST to database
     pass
 
