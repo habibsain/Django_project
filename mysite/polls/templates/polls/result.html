@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "./base.html" %}
 
 {% block "title" %} "{{ question.question_text }}" {% endblock %}
 
@@ -7,7 +7,7 @@
 	<h1> "{{ question.question_text }}" </h1>
 	<ul>
 		<li> choices : 	votes </li>
-	{% for choice in question.choice_set.all %}
+i	{% for choice in question.choice_set.all %}
 	<li> {{ choice.choice_text }} : {{ choice.vote }} </li>
 	{% endfor %}
 	</ul>
