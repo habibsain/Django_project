@@ -12,7 +12,7 @@ class Question(models.Model):
 
     
 
-class choice(models.Model):
+class Choice(models.Model):
     choice_text = models.TextField(max_length=100)
     vote = models.IntegerField()
     question = models.ForeignKey(Question, on_delete = models.CASCADE)
