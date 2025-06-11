@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.db.models import F
 from django.urls import reverse
+from django.utils import timezone
 from .models import Question, Choice
 
 # Create your views here.
@@ -61,6 +62,10 @@ def add_question(request):
     #choices for the question as well
     #update the new question from result.POST to database
     pass
+"""
+    q = Question(question_text = request.POST("question"), pub_date = timezone.now())
+    q.save()
+"""
 
 def add_choice(request, question_id):
     pass
