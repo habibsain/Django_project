@@ -2,8 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.db.models import F
 from django.urls import reverse
-
-from .models import *
+from .models import Question, Choice
 
 # Create your views here.
 def index(request):
