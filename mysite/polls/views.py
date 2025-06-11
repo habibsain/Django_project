@@ -41,7 +41,8 @@ def vote(request, question_id):
         selected_choice.vote = F("vote") + 1
         selected_choice.save()
 
-        return HttpResponseRedirect(reverse( "polls:result", args = (question.id)))
+        return HttpResponseRedirect(reverse( "polls:result", args = (question.id,)))#The comma in args is important as it gives args value a list instead of a single value
+    #Note: problem of implicit type conversion
 
 def result(request, question_id):
     
