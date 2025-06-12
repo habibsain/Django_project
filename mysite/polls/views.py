@@ -54,9 +54,11 @@ def result(request, question_id):
                       "question": question
                       })
 
+def add_page(request):
+    pass
 def add_question(request):
     #need to add:
-    #url
+    #url:ok
     #link with index
     #form to post new question
     #choices for the question as well
