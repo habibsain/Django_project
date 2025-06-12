@@ -5,6 +5,9 @@
 {% block content %}
 
 <h1> New Question </h1>
+<form action = "{% url 'polls:add_question'%}", method ="post">
+    {%csrf_token %}
+</form>
 
 
 
