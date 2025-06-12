@@ -5,10 +5,17 @@
 {% block content %}
 
 <h1> New Question </h1>
+
 <form action = "{% url 'polls:add_question'%}", method ="post">
     {%csrf_token %}
+
+    <fieldset>
+        <input type="text" id = "question" name = "question"><br>
+        <label for = "question"> Question_text</label>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+    
 </form>
-
-
 
 {% endblock %}

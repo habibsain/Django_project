@@ -55,19 +55,23 @@ def result(request, question_id):
                       })
 
 def add_page(request):
-    pass
+
+    return render(request, "polls/add_question.html")
+
 def add_question(request):
     #need to add:
     #url:ok
-    #link with index
-    #form to post new question
+    #link with index:OK
+    #form to post new question:Ok
     #choices for the question as well
     #update the new question from result.POST to database
-    pass
-"""
+    
+
     q = Question(question_text = request.POST("question"), pub_date = timezone.now())
     q.save()
-"""
+
+    return HttpResponseRedirect(reverse("polls:add"))
+
 
 def add_choice(request, question_id):
     pass
