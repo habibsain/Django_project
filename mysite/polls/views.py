@@ -67,7 +67,7 @@ def add_question(request):
     #update the new question from result.POST to database
     
 
-    q = Question(question_text = request.POST("question"), pub_date = timezone.now())
+    q = Question(question_text = request.POST["question"], pub_date = timezone.now())
     q.save()
 
     return HttpResponseRedirect(reverse("polls:add"))
