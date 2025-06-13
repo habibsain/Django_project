@@ -64,7 +64,7 @@ def add_question(request):
     #link with index:OK
     #form to post new question:Ok
     #choices for the question as well
-    #update the new question from result.POST to database
+    #update the new question from result.POST to database:OK
     
 
     q = Question(question_text = request.POST["question"], pub_date = timezone.now())
@@ -72,6 +72,8 @@ def add_question(request):
 
     return HttpResponseRedirect(reverse("polls:add"))
 
+def choice_page(request, question_id):
+    pass
 
 def add_choice(request, question_id):
     pass
