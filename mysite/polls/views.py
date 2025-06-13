@@ -59,11 +59,11 @@ def add_page(request):
     return render(request, "polls/add_question.html")
 
 def add_question(request):
-    #need to add:
+    #Todo:
     #url:ok
     #link with index:OK
     #form to post new question:Ok
-    #choices for the question as well
+    #choices for the question as well:ok
     #update the new question from result.POST to database:OK
     
 
@@ -73,6 +73,8 @@ def add_question(request):
     return HttpResponseRedirect(reverse("polls:add"))
 
 def choice_page(request, question_id):
+    #Todo:
+    #
     pass
 
 def add_choice(request, question_id):
