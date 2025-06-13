@@ -11,4 +11,6 @@ urlpatterns = [
     path("<int:question_id>/result/", views.result, name = "result"),
     path("new/", views.add_page, name = "add"),
     path("add/", views.add_question, name = "add_question"),
+    path("<int:question_id>/choice_page", views.choice_page, name = "choice_page"),
+    path("<int:question_id>/add_choice", views.add_choice, name = "add_choice"),
 ]
