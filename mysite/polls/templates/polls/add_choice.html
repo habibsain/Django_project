@@ -1,0 +1,26 @@
+{% extends "./base.html" %}
+
+{% block title %}Add Choice{% endblock %}
+
+{% block content %}
+
+<h1>{{question.question_text}}</h1>
+<ul>
+    {% for c in question.choice_set.all %}
+    <li>{{ c.choice_text }}</li>
+</ul>
+<h3> Add Choices </h3>
+
+<form action = "{% url 'polls:add_choice'%}", method ="post">
+    {%csrf_token %}
+
+    <fieldset>
+        <input type="text" id = "choice_text" name = "choice_text"><br>
+        <label for = "choice_text"> Choice_text</label>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+    
+</form>
+
+{% endblock %}
