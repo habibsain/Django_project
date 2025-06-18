@@ -73,8 +73,11 @@ def add_question(request):
     return HttpResponseRedirect(reverse("polls:add"))
 
 def edit_page(request):
-    
-    return render(request, "polls/edit_page.html")
+    question_list = Question.objects.all()
+    return render(request, "polls/edit_page.html",
+                  {
+                      "question_list" : question_list
+                    })
 
 
 def edit_question(request, question_id):
