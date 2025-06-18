@@ -75,6 +75,12 @@ def add_question(request):
 def edit_page(request):
     pass
 
+def edit_question(request, question_id):
+    pass
+
+def change_question(request, question_id):
+    pass
+
 def choice_page(request, question_id):
     #Todo:
     #url-edit pass:ok
