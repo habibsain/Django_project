@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+
+
+{% block title %}My amazing blog{% endblock %}
+
+{% block content %}
+<ul>
+    {% for q in question_list %}
+
+        <li>
+            <a href="{% url 'polls:edit' q.id %}">{{ q.question_text }}</a>
+        </li>
+
+
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

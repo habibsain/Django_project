@@ -72,9 +72,12 @@ def add_question(request):
 
     return HttpResponseRedirect(reverse("polls:add"))
 
+def edit_page(request):
+    pass
+
 def choice_page(request, question_id):
     #Todo:
-    #
+    #url-edit pass:ok
     pass
 
 def add_choice(request, question_id):
