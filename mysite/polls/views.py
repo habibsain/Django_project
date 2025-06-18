@@ -73,7 +73,9 @@ def add_question(request):
     return HttpResponseRedirect(reverse("polls:add"))
 
 def edit_page(request):
-    pass
+    
+    return render(request, "polls/edit_page.html")
+
 
 def edit_question(request, question_id):
     pass
