@@ -58,14 +58,20 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse( "polls:result", args = (question.id,)))#The comma in args is important as it gives args value a list instead of a single value
     #Note: problem of implicit type conversion
 
-def result(request, question_id):
+# def result(request, question_id):
     
-    question = get_object_or_404(Question, pk=question_id)
+#     question = get_object_or_404(Question, pk=question_id)
 
-    return render(request, "polls/result.html",
-                  {
-                      "question": question
-                      })
+#     return render(request, "polls/result.html",
+#                   {
+#                       "question": question
+#                       })
+
+class ResultView(generic.DetailView):
+    model = Question
+
+    template_name = "polls/result.html"
+
 
 def add_page(request):
 
