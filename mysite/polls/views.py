@@ -3,15 +3,25 @@ from django.http import Http404, HttpResponseRedirect
 from django.db.models import F
 from django.urls import reverse
 from django.utils import timezone
+from django.views import generic
+
 from .models import Question, Choice
 
 # Create your views here.
-def index(request):
-    question_list = Question.objects.all()
-    return render(request, "polls/index.html", 
-                  {
-                      "question_list" : question_list
-                    })
+# def index(request):
+#     question_list = Question.objects.all()
+#     return render(request, "polls/index.html", 
+#                   {
+#                       "question_list" : question_list
+#                     })
+
+class IndexView(generic.ListView):
+    template_name = "polls/index.html"
+    context_object_name = "question_list"
+
+    def get_queryset(self):
+        return Question.objects.order_by("pub_date")[:5]
+
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
