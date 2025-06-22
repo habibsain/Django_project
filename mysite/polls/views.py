@@ -23,15 +23,18 @@ class IndexView(generic.ListView):
         return Question.objects.order_by("pub_date")[:5]
 
 
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
+# def detail(request, question_id):
+#     question = get_object_or_404(Question, pk=question_id)
 
-    choices = question.choice_set.all()
-    return render(request, "polls/detail.html", 
-                  {
-                      "choice_list" : choices,
-                      "question" : question
-                    })
+#     choices = question.choice_set.all()
+#     return render(request, "polls/detail.html", 
+#                   {
+#                       "choice_list" : choices,
+#                       "question" : question
+#                     })
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = "polls/detail.html"
 
 def vote(request, question_id):
 
