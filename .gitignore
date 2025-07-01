@@ -1,4 +1,4 @@
 #env_file
-myenv
+/myenv/
 *.pyc
 mysite/db.*
