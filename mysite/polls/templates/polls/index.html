@@ -6,8 +6,8 @@
 {% block content %}
 
 <div id="rightbar">
-    <a href="{% url 'polls:add' %}">Add another question</a><br>
-    <a href="{% url 'polls:edit_page' %}">Edit questions</a>
+    <a href="{% url 'polls:add' %}">Add Question</a><br>
+    
 </div>
 
 <div id="title">
@@ -17,8 +17,14 @@
 {% for q in question_list %}
 
     <div id="qn">
-        <a  href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a>
-    <p>{{ q.pub_date }}</p>
+        <ul>
+            <li class="qn_t">
+                <a  href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a>
+            </li>
+                
+        </ul>
+        <p>{{ q.pub_date }}</p>
+        <a href="{% url 'polls:edit_page' q.id %}">Edit question</a>
     </div>
 
 {% endfor %}

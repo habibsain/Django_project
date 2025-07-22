@@ -23,18 +23,18 @@ class IndexView(generic.ListView):
         return Question.objects.order_by("pub_date")[:5]
 
 
-# def detail(request, question_id):
-#     question = get_object_or_404(Question, pk=question_id)
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
 
-#     choices = question.choice_set.all()
-#     return render(request, "polls/detail.html", 
-#                   {
-#                       "choice_list" : choices,
-#                       "question" : question
-#                     })
-class DetailView(generic.DetailView):
-    model = Question
-    template_name = "polls/detail.html"
+    choices = question.choice_set.all()
+    return render(request, "polls/detail.html", 
+                  {
+                      "choice_list" : choices,
+                      "question" : question
+                    })
+# class DetailView(generic.DetailView):
+#     model = Question
+#     template_name = "polls/detail.html"
 
 def vote(request, question_id):
 
@@ -58,19 +58,19 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse( "polls:result", args = (question.id,)))#The comma in args is important as it gives args value a list instead of a single value
     #Note: problem of implicit type conversion
 
-# def result(request, question_id):
+def result(request, question_id):
     
-#     question = get_object_or_404(Question, pk=question_id)
+    question = get_object_or_404(Question, pk=question_id)
 
-#     return render(request, "polls/result.html",
-#                   {
-#                       "question": question
-#                       })
+    return render(request, "polls/result.html",
+                  {
+                      "question": question
+                      })
 
-class ResultView(generic.DetailView):
-    model = Question
+# class ResultView(generic.DetailView):
+#     model = Question
 
-    template_name = "polls/result.html"
+#     template_name = "polls/result.html"
 
 
 def add_page(request):
@@ -91,12 +91,16 @@ def add_question(request):
 
     return HttpResponseRedirect(reverse("polls:add"))
 
-def edit_page(request):
-    question_list = Question.objects.all()
-    return render(request, "polls/edit_page.html",
+def edit_page(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+
+    choices = question.choice_set.all()
+    return render(request, "polls/edit_page.html", 
                   {
-                      "question_list" : question_list
+                      "choice_list" : choices,
+                      "question" : question
                     })
+
 
 
 def edit_question(request, question_id):
@@ -105,7 +109,7 @@ def edit_question(request, question_id):
 def change_question(request, question_id):
     pass
 
-def choice_page(request, question_id):
+def delete_choice(request, choice_id):
     #Todo:
     #url-edit pass:ok
     pass

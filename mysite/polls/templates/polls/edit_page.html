@@ -5,13 +5,13 @@
 
 {% block content %}
 <h1>
-    Select the question to edit
+    Select the Choice to edit
 </h1>
 <ul>
-    {% for q in question_list %}
+    {% for c in choice_list %}
 
         <li>
-            <a href="{% url 'polls:edit' q.id %}">{{ q.question_text }}</a>
+            <a href="{% url 'polls:edit_choice' c.id %}">{{ c.choice_text }}</a>
         </li>
 
 
