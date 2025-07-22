@@ -12,22 +12,27 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
     background-color: skyblue;
 }
 
+.nav {
+    float: left;
+}
+
 .nav a {
-    display: inline;
-    width: 60px;
+    display: block;
     color: black;
     text-align: center;
-    padding: 10px;
+    padding: 3px;
     text-decoration: none;
 }
+
 
 .nav a:hover{
     background-color: darkblue;
 }
+
 
 #rightbar {
     position: relative;
@@ -74,10 +79,10 @@ body {
 }
 
 .qn_t a {
-    display: inline;
+    display: block;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 4px;
     text-decoration: none;
 }
 
