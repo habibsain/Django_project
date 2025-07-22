@@ -3,6 +3,14 @@
 
 {% block title %}Poll{% endblock %}
 
+{% block sidebar %}
+        <ul>
+        <li class="nav"> <a href="/polls">Home</a> </li>
+        <li class="nav" id="info">Click a question to vote</li>
+        <li style="float: right;" class="nav"> <a href="/logout">Logout</a> </li>
+        </ul>
+{% endblock %}
+
 {% block content %}
 
 <div id="rightbar">
@@ -11,7 +19,7 @@
 </div>
 
 <div id="title">
-    <h2>Question List</h2>
+    <h1>Question List</h1>
 </div>
 
 {% for q in question_list %}
@@ -24,7 +32,11 @@
                 
         </ul>
         <p>{{ q.pub_date }}</p>
-        <a href="{% url 'polls:edit_page' q.id %}">Edit question</a>
+        <div class="meta" >
+            <a  href="{% url 'polls:edit_page' q.id %}">Edit question</a>
+            <a style="float: right;" href="{% url 'polls:edit' q.id %}">Delete question</a>
+        </div>
+        
     </div>
 
 {% endfor %}

@@ -5,15 +5,25 @@
 
 body {
     font-family: sans-serif;
-    background-color: ghostwhite;
+    background-color: rgb(219, 239, 247);
+}
+
+#sidebar {
+    position: fixed;
+    width: 98%;
+    margin: auto;
+    margin-top: 2px;
+    overflow: auto;
+    background-color: skyblue;
+    top: 0;
 }
 
 #sidebar ul {
     list-style-type: none;
+    padding: 2px;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: skyblue;
+    margin-bottom: 2px;
+    
 }
 
 .nav {
@@ -25,43 +35,79 @@ body {
     color: black;
     text-align: center;
     padding: 3px;
+    margin-top: -1px;
     text-decoration: none;
+    overflow: auto;
 }
 
 
 .nav a:hover{
-    background-color: darkblue;
+    background-color: blue}
+
+#info {
+    display: block;
+    margin: auto;
+    margin-left: 340px;
+    margin-top: -1px;
+    padding: 2px;
+    text-align: center;
+    font-family: cursive;
+    font-size: large;
+    text-decoration: none;
+    left: 40%;
+    color: rgb(2, 100, 28);
 }
 
-
 #rightbar {
-    position: relative;
+    position: fixed;
+    background-color: gray;
     display: block;
-    margin-top: 10px;
+    margin-top: 8px;
+    padding: 2px;
+    width: 150px;
+    text-align: center;
+}
+
+#rightbar a {
+    color: white;;
+}
+
+#rightbar a:hover {
+    background-color: #111111;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
 
 #title {
-    margin-top: -15px;
     margin: auto;
+    margin-top: 35px;
     margin-bottom: 2px;
-    width: 50%;
+    border-radius: 2px;
+    width: 65%;
     border: 1px black;
     background-color: gray;
     padding: 10px;
 }
 
-#title h2 {
-    margin: auto;
+#title h1 {
+    font-family: 'Times New Roman';
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
+
+
 #qn {
     margin: auto;
+    margin-bottom: 2px;
     height:auto;
-    width: 50%;
+    width: 65%;
     border: 1px solid green;
+    border-radius: 2px;
     background-color: aquamarine;
     padding: 10px;
 }
@@ -89,6 +135,10 @@ body {
 .qn_t a:hover {
     
     background-color: #111111;
+}
+
+.meta a {
+    padding: 2px;
 }
 
 

@@ -8,13 +8,15 @@
 <ul>
     {% for c in question.choice_set.all %}
     <li>{{ c.choice_text }}</li>
+    {% endfor %}
 </ul>
 <h3> Add Choices </h3>
 
-<form action = "{% url 'polls:add_choice'%}", method ="post">
+<form action = "{% url 'polls:add_choice' question.id%}", method ="post">
     {%csrf_token %}
 
     <fieldset>
+        <input type="hidden" id = "question_id" name="question_id" value = "{{ question.id }}"><br>
         <input type="text" id = "choice_text" name = "choice_text"><br>
         <label for = "choice_text"> Choice_text</label>
     </fieldset>
