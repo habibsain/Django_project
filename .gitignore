@@ -5,6 +5,6 @@
 
 mysite/db.sqlite3
 
-mysite/mysite/settings/
+mysite/mysite/settings.py
 
 .gitignore
