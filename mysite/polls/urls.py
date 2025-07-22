@@ -19,7 +19,7 @@ urlpatterns = [
     #edit choice
     path("<int:question_id>/edit_page/", views.edit_page, name = "edit_page"),
     path("add/", views.add_question, name = "add_question"),
-    path("<int:question_id>/delete_choice", views.delete_choice, name = "delete_choice"),
+    path("<int:choice_id>/delete_choice", views.delete_choice, name = "delete_choice"),
     path("<int:question_id>/edit_choice", views.edit_choice, name = "edit_choice"),
     path("<int:question_id>/add_choice", views.add_choice, name = "add_choice"),
     path("<int:question_id>/change_question", views.change_question, name = "change_question"),

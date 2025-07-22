@@ -4,19 +4,22 @@
 {% block title %}Poll{% endblock %}
 
 {% block content %}
-<h1>
-    Select the Choice to edit
-</h1>
-<ul>
+<h2 style="margin-top: 30px;">
+    Select the Choice to delete
+</h2>
+<ul style="margin-top: -10px;">
     {% for c in choice_list %}
 
         <li>
-            <a href="{% url 'polls:edit_choice' c.id %}">{{ c.choice_text }}</a>
+            <a href="{% url 'polls:delete_choice' c.id %}">{{ c.choice_text }}</a>
         </li>
 
 
     {% endfor %}
 </ul>
+<h3>
+    <a href="{% url 'polls:edit_choice' question.id %}">Add new choice</a>
+</h3>
 
 
 {% endblock %}
