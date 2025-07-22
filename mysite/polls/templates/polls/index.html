@@ -1,18 +1,27 @@
 {% extends "./base.html" %}
 
 
-{% block title %}My amazing blog{% endblock %}
+{% block title %}Poll{% endblock %}
 
 {% block content %}
 
+<div id="rightbar">
+    <a href="{% url 'polls:add' %}">Add another question</a><br>
+    <a href="{% url 'polls:edit_page' %}">Edit questions</a>
+</div>
+
+<div id="title">
+    <h2>Question List</h2>
+</div>
+
 {% for q in question_list %}
 
-<a href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a>
-<p>{{ q.pub_date }}</p>
+    <div id="qn">
+        <a  href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a>
+    <p>{{ q.pub_date }}</p>
+    </div>
 
 {% endfor %}
 
-<a href="{% url 'polls:add' %}">Add another question</a><br>
-<a href="{% url 'polls:edit_page' %}">Edit questions</a>
 
 {% endblock %}

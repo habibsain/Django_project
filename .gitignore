@@ -1,4 +1,10 @@
 #env_file
-/my_env
+/my_env 
+
 *.pyc
-mysite/db.*
+
+mysite/db.sqlite3
+
+mysite/mysite/settings/
+
+.gitignore
