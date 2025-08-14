@@ -4,19 +4,21 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>{% block title %}Poll{% endblock %}</title>
 </head>
 
 <body>
-
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul>
-        <li class="nav"> <a href="/polls">Home</a> </li>
-        <li style="float: right;" class="nav"> <a href="/logout">Logout</a> </li>
-        </ul>
+        
+    <div id="navbar">
+        
+        
+        <div class="nav"> <a href="/polls">Home</a> </div>
+        
+        {% block navbar %}
         {% endblock %}
+        <div style="margin-left: auto;" class="nav"> <a href="/logout">Logout</a> </div>
     </div>
 
     <div id="content">

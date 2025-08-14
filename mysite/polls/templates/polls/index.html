@@ -3,20 +3,18 @@
 
 {% block title %}Poll{% endblock %}
 
-{% block sidebar %}
-        <ul>
-        <li class="nav"> <a href="/polls">Home</a> </li>
-        <li class="nav" id="info">Click a question to vote</li>
-        <li style="float: right;" class="nav"> <a href="/logout">Logout</a> </li>
-        </ul>
+{% block navbar %}
+        
+        
+        <div class="nav" id="add_q"> <a href="{% url 'polls:add' %}">Add Question</a></div>
+        
+        
 {% endblock %}
 
-{% block content %}
 
-<div id="rightbar">
-    <a href="{% url 'polls:add' %}">Add Question</a><br>
-    
-</div>
+{% block content %}
+<div id="info">Click a question to vote</div>
+
 
 <div id="title">
     <h1>Question List</h1>
