@@ -5,15 +5,17 @@
 
 body {
     font-family: sans-serif;
-    background-color: rgb(219, 239, 247);
+    /* background-color: rgb(219, 239, 247); */
+    background-image: url("back.jpg");
 }
 
 #navbar {
     display: flex;
     position: fixed;
     width: 100%;
+    height: 80px;
     justify-content: left;
-    margin-top: 2px;
+    margin-left: -4px;
     /* overflow: hidden; */
     background-color: skyblue;
     top: 0;
@@ -24,7 +26,8 @@ body {
 .nav a {
     display: block;
     color: black;
-    padding: 15px;
+    font-size: 30px;
+    padding: 19px;
     text-decoration: none;
     /* overflow: auto; */
 }
@@ -34,9 +37,9 @@ body {
 .nav a:hover{
     background-color: blue}
 
-@media (max-width: 768px) { /* Example: hide div if viewport width is less than 768px */
+@media (max-width: 868px) { /* hide div if viewport width is less than 768px */
   #add_q {
-    display: none; /* Hides the div completely */
+    display: none; 
   }
 }
 
@@ -47,25 +50,25 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-family: cursive;
-    font-size:larger;
+    font-size:35px;
     overflow: auto;
-    padding: 15px;
+    padding: 18px;
     text-decoration: none;
     color: rgb(2, 100, 28);
     z-index: 1001;
 }
 
 #content {
-    margin-top: 70px;
+    margin-top: 90px;
 }
 
 
 #title {
     margin: auto;
     
-    margin-bottom: 2px;
+    margin-bottom: 10px;
     border-radius: 2px;
-    width: 65%;
+    width: 75%;
     border: 1px black;
     background-color: gray;
     padding: 10px;
@@ -73,7 +76,7 @@ body {
 
 #title h1 {
     font-family: 'Times New Roman';
-    font-size: 40px;
+    font-size: 60px;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -83,9 +86,9 @@ body {
 
 #qn {
     margin: auto;
-    margin-bottom: 2px;
-    height:auto;
-    width: 65%;
+    margin-bottom: 10px;
+    height:200px;
+    width: 75%;
     border: 1px solid green;
     border-radius: 2px;
     background-color: aquamarine;
@@ -94,21 +97,24 @@ body {
 
 #qn ul {
     list-style-type: none;
+    font-size: 30px;
     margin: 0;
-    padding: 2px;
+    padding: 10px;
     overflow:auto;
     background-color: gray;
 }
 
 .qn_t {
     float: left;
+    
 }
 
 .qn_t a {
     display: block;
     color: white;
     text-align: center;
-    padding: 4px;
+    
+    padding: 10px;
     text-decoration: none;
 }
 
@@ -118,7 +124,9 @@ body {
 }
 
 .meta a {
-    padding: 2px;
+    font-size: 20px;
+    margin: auto;
+    
 }
 
 
